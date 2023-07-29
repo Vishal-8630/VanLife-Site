@@ -10,6 +10,8 @@
 
     font-size: $medium-font-size;
     text-align: center;
+    border-top-left-radius: $large-border-radius;
+    border-top-right-radius: $large-border-radius;
     
     @include tablet {
         font-size: $large-font-size;

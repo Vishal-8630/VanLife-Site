@@ -18,9 +18,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className={styles["nav__list__link"]}>
-              Van
+            <Link to="/vans" className={styles["nav__list__link"]}>
+              Vans
             </Link>
+          </li>
+          <li>
           </li>
         </ul>
       </nav>

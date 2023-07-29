@@ -1,0 +1,8 @@
+@import '../../styles/main.scss';
+
+.vans {
+    @include flex(row, center);
+    @extend .container;
+    margin-top: $large-margin;
+    flex-wrap: wrap;
+}

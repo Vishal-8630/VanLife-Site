@@ -1,0 +1,155 @@
+@import '../../styles/main.scss';
+
+.van {
+    @extend .container;
+    @include flex(column, $gap: 0);
+    width: 90%;
+    min-height: 100vh;
+
+    div:first-child {
+        width: 100%;
+        text-align: left;
+    }
+
+    .back__link {
+        display: inline-block;
+        color: $primary-color;
+        font-size: $medium-font-size;
+        position: relative;
+        font-weight: 700;
+        font-family: $font-family-2;
+
+        @include tablet {
+            margin-left: 0;
+        }
+
+        &::after {
+            @extend %after-before-utility;
+            height: 3px;
+            width: 0;
+            margin-left: 5px;
+            background-color: $primary-color;
+            border-radius: $large-border-radius;
+            transition: $transition;
+        }
+
+        &:hover {
+            opacity: $opacity;
+
+            &::after {
+                transform: scale(1);
+                width: 100%;
+            }
+        }
+
+        span {
+            font-size: $large-font-size * 1.5;
+        }
+    }
+
+    &__info {
+        @include flex(column, space-between, center);
+        width: 90%;
+        margin-top: $large-margin;
+
+        @include desktop {
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .van__img {
+            width: 100%;
+            text-align: center;
+            flex: 1;
+
+            @include desktop {
+                text-align: left;
+            }
+
+            img {
+                max-width: 30rem;
+                width: 100%;
+                border-radius: $large-border-radius;
+            }
+        }
+
+        .details {
+            margin-top: $medium-margin;
+            flex: 1;
+            width: 100%;;
+
+            @include tablet {
+                @include flex(column, $gap: 0);
+            }
+
+            button {
+                @extend %button-utility;
+                background-color: $secondary-background-color;
+
+                @include tablet {
+                    order: 3;
+                    margin-top: 3rem;
+                    width: 50%
+                }
+
+                @include desktop {
+                    width: 100%
+                }
+            }
+
+            h1 {
+                @extend %heading-utility;
+                margin-top: 10px;
+                margin-bottom: 0;
+                font-size: $large-font-size * 1.5;
+
+                @include tablet {
+                    font-size: $large-font-size;
+                }
+
+                @include desktop {
+                    font-size: $large-font-size * 1.5;
+                }
+            }
+
+            p {
+                @extend %para-utility;
+                margin: 0;
+                font-size: $large-font-size;
+
+                strong {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+    .description {
+        @extend %para-utility;
+        font-size: $large-font-size;
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        width: 90%;
+        flex: 1;
+
+        @include desktop {
+            margin-top: $large-margin;
+            margin-bottom: $large-border-radius;
+            line-height: 1.7;
+        }
+    }
+
+    .rent__button {
+        width: 100%;
+        margin-bottom: $medium-margin * 2;
+        text-align: center;
+
+        button {
+            @extend %button-utility;
+            background-color: $primary-background-color;
+            width: 100%;
+            max-width: 40rem;
+        }
+    }
+}
