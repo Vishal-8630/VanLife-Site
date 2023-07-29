@@ -1,0 +1,64 @@
+@import '../../styles/main.scss';
+
+.main {
+    @extend .container;
+    @include flex(column, center, center);
+    flex: 1;
+
+    background: url('../../assets/images/bus.jpg');
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    color: $white;
+    transition: $transition;
+    overflow-y: hidden;
+    margin-bottom: $small-margin;
+    border-radius: $small-border-radius;
+
+    @include desktop {
+        background-position: center;
+    }
+
+    &__cover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+    &__content {
+        width: 80%;
+        z-index: 200;
+        text-align: center;
+
+        @include desktop {
+            max-width: 70%;
+        }
+
+        h1 {
+           @extend %heading-utility;
+        }
+
+        p {
+            @extend %para-utility;
+        }
+
+        button {
+            @extend %button-utility;
+            background-color: $primary-background-color;
+
+            @include tablet {
+                padding: $base-space $large-padding * 3;
+                font-size: $base-font-size * 1.2;
+            }
+
+            @include desktop {
+                font-size: $medium-font-size;
+                padding: $base-space $large-padding * 7;
+            }
+        }
+    }
+}

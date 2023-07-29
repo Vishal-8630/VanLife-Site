@@ -1,0 +1,72 @@
+@import '../../styles/main.scss';
+
+.header {
+    padding: $large-padding;
+    font-family: $font-family-2;
+
+    @include desktop {
+        padding: $large-padding $large-padding * 2;
+    }
+    
+    .nav {
+        @include flex(row, space-between, center);
+        padding-left: $medium-padding;
+        padding-right: $medium-padding;
+        
+        &__logo {
+            font-size: $large-font-size * 1.2;
+            color: $black;
+            text-transform: uppercase;
+            transition: $transition;
+
+            @include tablet {
+                font-size: $large-font-size * 1.5;
+            }
+    
+            &:hover {
+                opacity: $opacity;
+            }
+        }
+    
+        &__list {
+            @include flex($gap: $large-gap);
+    
+            &__link {
+                color: $primary-color;
+                transition: $transition;
+                position: relative;
+                font-weight: 700;
+                font-size: $medium-font-size;
+
+                @include tablet {
+                    font-size: $large-font-size;
+                }
+    
+                &::after {
+                    @extend %after-before-utility;
+    
+                    left: 0;
+                    bottom: 0;
+    
+                    // To Change
+                    margin-top: 10px;
+                    border-radius: $small-border-radius;
+                    height: 3px;
+                    width: 0%;
+                    background-color: $primary-color;
+                    transition: $transition;
+                }
+    
+                &:hover {
+                    opacity: $opacity;
+    
+                    &::after {
+                        opacity: 1;
+                        width: 100%;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+}

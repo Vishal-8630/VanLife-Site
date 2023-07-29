@@ -1,0 +1,70 @@
+%after-before-utility {
+    content: '';
+    position: absolute;
+    display: block;
+}
+
+%button-utility {
+    font-size: $base-font-size;
+    font-family: $font-family-2;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: $white;
+    border-radius: $large-border-radius;
+    border: none;
+    transition: $transition;
+    position: relative;
+    padding: $base-space $large-padding * 1.5;
+
+    @include tablet {
+        font-size: $medium-font-size;
+    }
+
+    &::after {
+        @extend %after-before-utility;
+        background-color: white;
+        opacity: 0.2;
+        width: 0%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: $large-border-radius;
+        transition: $transition;
+    }
+          
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+%para-utility {
+    font-size: $base-font-size;
+    font-family: $font-family-2;
+    font-weight: 700;
+    margin-top: $medium-margin;
+    margin-bottom: $medium-margin;
+    transition: $transition;
+
+    @include desktop {
+        font-size: $medium-font-size
+    }
+}
+
+%heading-utility {
+    font-size: $large-font-size;
+    font-family: $font-family-1;
+    line-height: 1.3;
+
+    margin-bottom: $medium-margin;
+
+    @include tablet {
+        font-size: $large-font-size * 1.3;
+    }
+
+    @include desktop {
+        font-size: $large-font-size * 1.6;
+    }
+}

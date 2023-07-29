@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.footer {
+    @extend .container;
+
+    width: 100%;
+    background-color: #1c1c1c;
+    color: white;
+    padding: $medium-padding $large-padding;
+
+    font-size: $medium-font-size;
+    text-align: center;
+    
+    @include tablet {
+        font-size: $large-font-size;
+    }
+}

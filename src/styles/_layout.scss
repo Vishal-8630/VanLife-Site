@@ -1,0 +1,10 @@
+.container {
+    width: 95%;
+    max-width: $max-width;
+    margin: 0 auto;
+    position: relative;
+
+    @include desktop {
+        width: 100%;
+    }
+}
